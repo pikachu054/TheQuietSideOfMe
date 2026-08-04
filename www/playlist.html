@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="moon">🎵</div>
+
+    <h1>Playlist</h1>
+
+    <p class="subtitle">
+        Music speaks when words cannot.
+    </p>
+
+    <div class="memory-card" onclick="location.href='song1.html'">
+        <h2>🎧 Song One</h2>
+        <p>A song that means a lot to me.</p>
+        <span>🎵 Playlist</span>
+    </div>
+
+    <div class="memory-card" onclick="location.href='song2.html'">
+        <h2>🎼 Song Two</h2>
+        <p>Music for quiet moments.</p>
+        <span>🎵 Playlist</span>
+    </div>
+
+    <div class="memory-card" onclick="location.href='song3.html'">
+        <h2>🎶 Song Three</h2>
+        <p>A melody for the future.</p>
+        <span>🎵 Playlist</span>
+    </div>
+
+    <button id="backButton">← Back</button>
+
+</div>
+
+<script>
+document.getElementById("backButton").addEventListener("click", function () {
+    window.location.href = "dashboard.html";
+});
+</script>
+
+</body>
+</html>

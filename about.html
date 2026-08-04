@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="moon">⭐</div>
+
+    <h1>About Me</h1>
+
+    <p class="subtitle">
+        Learn more about my journey.
+    </p>
+
+    <div class="memory-card" onclick="location.href='profile.html'">
+        <h2>👤 Profile</h2>
+        <p>Who I am.</p>
+        <span>About</span>
+    </div>
+
+    <div class="memory-card" onclick="location.href='goals.html'">
+        <h2>🎯 Goals</h2>
+        <p>Dreams and ambitions.</p>
+        <span>Future</span>
+    </div>
+
+    <div class="memory-card" onclick="location.href='favorites.html'">
+        <h2>❤️ Favorites</h2>
+        <p>Things I enjoy.</p>
+        <span>Personal</span>
+    </div>
+
+    <button id="backButton">← Back</button>
+
+</div>
+
+<script>
+document.getElementById("backButton").addEventListener("click", function () {
+    window.location.href = "dashboard.html";
+});
+</script>
+
+</body>
+</html>

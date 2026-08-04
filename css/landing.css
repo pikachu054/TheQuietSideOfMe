@@ -1,0 +1,435 @@
+/*=========================================
+        THE QUIET SIDE OF ME
+        LANDING PAGE V4
+==========================================*/
+
+/*=============
+ RESET
+=============*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/*=============
+ COLORS
+=============*/
+
+:root{
+
+    --bg1:#040814;
+    --bg2:#0B1736;
+    --bg3:#1A1142;
+
+    --green:#00D9A6;
+    --blue:#48BFFF;
+    --purple:#9D6CFF;
+
+    --pink:#FF5FA2;
+
+    --white:#FFFFFF;
+    --gray:#D6E2F0;
+
+}
+
+/*=============
+ BODY
+=============*/
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    color:white;
+
+    background:
+    radial-gradient(circle at top,
+    var(--bg3) 0%,
+    var(--bg2) 40%,
+    var(--bg1) 100%);
+
+}
+
+/*=============
+ AURORA
+=============*/
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-40%;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent 10%,
+
+    rgba(0,217,166,.25),
+
+    rgba(72,191,255,.20),
+
+    rgba(157,108,255,.18),
+
+    transparent 90%
+
+    );
+
+    filter:blur(120px);
+
+    animation:auroraMove 20s ease-in-out infinite alternate;
+
+}
+/*=========================================
+        PART 2
+==========================================*/
+
+/*=============
+ GLASS CARD
+=============*/
+
+.container{
+
+    position:relative;
+
+    z-index:10;
+
+    width:90%;
+
+    max-width:700px;
+
+    text-align:center;
+
+    padding:50px 40px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(28px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    inset 0 0 20px rgba(255,255,255,.05);
+
+}
+
+/*=============
+ HEART
+=============*/
+
+.heart{
+
+    position:relative;
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 35px;
+
+    background:var(--pink);
+
+    transform:rotate(-45deg);
+
+    border-radius:10px;
+
+    box-shadow:
+    0 0 25px rgba(255,95,162,.6),
+    0 0 50px rgba(255,95,162,.35);
+
+}
+
+.heart::before,
+.heart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+
+    height:80px;
+
+    background:var(--pink);
+
+    border-radius:50%;
+
+}
+
+.heart::before{
+
+    top:-40px;
+
+    left:0;
+
+}
+
+.heart::after{
+
+    left:40px;
+
+    top:0;
+
+}
+
+/*=============
+ TITLE
+=============*/
+
+h1{
+
+    font-size:46px;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    color:var(--white);
+
+}
+
+/*=============
+ SUBTITLE
+=============*/
+
+.subtitle{
+
+    color:var(--gray);
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+/*=============
+ BUTTON
+=============*/
+
+button{
+
+    padding:16px 55px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.14);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    background:white;
+
+    color:#111827;
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.35);
+
+}
+
+/*=============
+ FOOTER
+=============*/
+
+.footer{
+
+    margin-top:35px;
+
+    color:var(--gray);
+
+    font-size:14px;
+
+}
+/*=========================================
+        PART 3
+==========================================*/
+
+/*=============
+ ANIMATIONS
+=============*/
+
+.container{
+
+    animation:fadeIn 1.2s ease;
+
+}
+
+.heart{
+
+    animation:
+    heartbeat 3s ease-in-out infinite,
+    floatHeart 5s ease-in-out infinite;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+
+        transform:rotate(-45deg) scale(1);
+
+    }
+
+    50%{
+
+        transform:rotate(-45deg) scale(1.08);
+
+    }
+
+}
+
+@keyframes floatHeart{
+
+    0%,100%{
+
+        margin-top:0;
+
+    }
+
+    50%{
+
+        margin-top:-8px;
+
+    }
+
+}
+
+@keyframes auroraMove{
+
+    from{
+
+        transform:
+        rotate(-5deg)
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+        rotate(5deg)
+        scale(1.08);
+
+    }
+
+}
+
+/*=============
+ MOBILE
+=============*/
+
+@media(max-width:768px){
+
+    .container{
+
+        width:92%;
+
+        padding:40px 24px;
+
+    }
+
+    .heart{
+
+        width:65px;
+        height:65px;
+        margin-bottom:28px;
+
+    }
+
+    .heart::before,
+    .heart::after{
+
+        width:65px;
+        height:65px;
+
+    }
+
+    .heart::before{
+
+        top:-32px;
+
+    }
+
+    .heart::after{
+
+        left:32px;
+
+    }
+
+    h1{
+
+        font-size:34px;
+        letter-spacing:2px;
+
+    }
+
+    .subtitle{
+
+        font-size:17px;
+
+    }
+
+    button{
+
+        width:220px;
+
+    }
+
+}
